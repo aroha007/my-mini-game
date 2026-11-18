@@ -1,0 +1,7 @@
+ @charset "UTF-8";
+    h1 {
+    	margin: 10px 0; /* 주변 위젯 여백 */
+    	font-size: 50px; /* 글자크기 직접제어 */
+    	color: blue; /* 글자색 파랑*/
+    }
+  
