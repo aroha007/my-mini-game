@@ -2,7 +2,7 @@
  
        /* 전체 홈페이지문서 보이는 영역 전체 설정*/
 body {
-	background-color: #00fa9a;
+	background-color: #d4fffb;
     font-family: sans-serif;
 }
  
@@ -19,4 +19,8 @@ background: white;
 border: 1px solid #e5e5e5;
 border-radius: 18px;
 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+li:hover {
+background: #dbeafe;
 }

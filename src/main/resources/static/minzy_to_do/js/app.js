@@ -23,6 +23,8 @@ function sayHello() {
 
 helloButton.addEventListener("click", sayHello)
 
+
+/*
  // 섹션 12 예제
  // 1. 컬러 배열 선언
  const buttonColor = ["pink", "green", "yellow", "white", "red"];
@@ -55,16 +57,34 @@ helloButton.addEventListener("click", sayHello)
  button3.addEventListener("click", button3Click);
  button4.addEventListener("click", button4Click);
  button5.addEventListener("click", button5Click);
- 
+ */
  
  // toList 제어하기
  // 1. 추가버튼 찾기
   const addButton = document.querySelector("#addButton");
  // 2. #addButton 태그를 눌렀는가 모니터링
   addButton.addEventListener("click", function() {
-  alert("버튼을 클릭했어요!");
+  // 3. 입력창에서 글자가져오기
+  const input = document.querySelector("#taskInput");
+  // 3.5 입력창에 값이 비었으면 li추가 취소 
+  if (input.value.trim() === "") {
+  alert("할 일을 입력해 주세요!");
+  return;
+  }
+  // 4. ul에 추가할 내용을 등록하기 위해
+  // li태그 필요. 자바스크립트로 새로 만들어야함
+  const item = document.createElement("li");
+  // 5. li item에 input값을 저장
+  item.textContent = input.value;
+  // 6. dom으로 "#taskList" ul요소를 찾기"
+  document.querySelector("#taskList").append(item);
+  // 6.5 추가된 할 일을 완료포시 하기 (취소선으로 완료)
+  item.addEventListener("click", function() {
+  item.style.textDecoration = "line-through";
+  });
+  // 7. 새로 li에 값이 추가되고 나면 input 태그 값을 ""초기화
+  input.value = "";
   });
   
-  const input = document.querySelector("#taskInput");
-  console.log(input.value);
- 
+  
+  
