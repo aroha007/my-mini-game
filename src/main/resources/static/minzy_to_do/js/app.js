@@ -86,5 +86,49 @@ helloButton.addEventListener("click", sayHello)
   input.value = "";
   });
   
-  
-  
+ // loadStroge을 이용한 행운뽑기 
+ // 1. 포츈종류 배열만듭니다.
+ 
+ const fortunes = [
+	"최상",
+	"상",
+	"중",
+	"하",
+	"최하",
+ ]
+ 
+ // 2. 선택된 포츈을 저장하는 포츈변수를 초기화 합니다.
+ let currentFortune = "";
+ 
+ // 3. 실제 포츈을 뽑는 함수 정의 drawFortune() 정의
+ function drawFortune() {
+	// 1. 포츈배열에서 난수로 인덱스 번호를 가져오면된다.
+	// 난수 만들기 -> 임의의 정수 생성
+	// Math.floor(숫자의 범위) : 
+	// 수학 라이브러리. 주어진 가장 작은 정수를 뽑는 함수
+	// 숫자의 범위는 난수를 발생시킨 값 *  배열의 갯수
+	// 0 <= 난수 <= 배열의 갯수 사이의 실수
+	// floor(3.5) : 3을 리턴
+	// Math.random() : 0.0 <= 난수 < 1.0보다 작은 실수 
+	const index = Math.floor(
+		Math.random() * fortunes.length
+		) // 배열.length : 배열의 크기
+		
+		// 현재 랜덤 행운 뽑기
+		currentFortune = fortunes[index];
+		
+		// 현재 운세의 내용을 result 태그에 출력
+		document.querySelecter("#result").textContent = 
+		currentFortune;
+ }
+ // 4. 포츈을 저장하는 함수 정의 saveFortune() 정의
+ function saveFortune() {
+ }
+ // 5. 저장된 포츈을 불러옵니다. 함수 정의 loadFortune() 정의
+ function loadFortune() {
+ }
+ // 6. 저장된 포츈정보를 삭제하기. 함수 정의 deleteFortune() 정의
+ function deleteFortune() {
+ }
+ 
+
